@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">D:\elrangga\responsi.html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven - Rental Buku</title>
+    <style>
+        /* CSS untuk styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        .book-list {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .book-item, .order-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Koleksi Buku di Book Haven</h1>
+    <ul class="book-list">
+        <!-- Contoh buku-buku yang tersedia -->
+        <li class="book-item">Buku A</li>
+        <li class="book-item">Buku B</li>
+        <li class="book-item">Buku C</li>
+        <!-- Bisa tambahkan lebih banyak buku sesuai koleksi -->
+    </ul>
+
+    <hr> <!-- Garis pemisah antara bagian koleksi buku dan form pemesanan -->
+
+    <h2>Pesan Buku di Book Haven</h2>
+    <form action="process_order.php" method="POST">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="judul">Judul Buku:</label>
+        <input type="text" id="judul" name="judul" required>
+
+        <label for="durasi">Durasi Sewa (hari):</label>
+        <input type="number" id="durasi" name="durasi" min="1" required>
+
+        <input type="submit" value="Pesan">
+    </form>
+
+    <hr> <!-- Garis pemisah antara form pemesanan dan data pesanan -->
+
+    <h2>Data Pesanan di Book Haven</h2>
+    <ul class="order-list">
+        <!-- Tempat untuk menampilkan data pesanan dari file .txt -->
+        <!-- Contoh data -->
+        <li class="order-item">Nama: John Doe | Judul Buku: Buku A | Durasi Sewa: 7 hari</li>
+        <li class="order-item">Nama: Jane Smith | Judul Buku: Buku C | Durasi Sewa: 5 hari</li>
+        <!-- Bisa menampilkan lebih banyak data sesuai dengan pesanan yang masuk -->
+    </ul>
+</body>
+</html>
